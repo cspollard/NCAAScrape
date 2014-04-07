@@ -13,7 +13,7 @@ data NCAAData = NCAAData {
     } deriving Show
 
 instance FromJSON NCAAData where
-    parseJSON (Object v) = trace "NCAAData" $ NCAAData <$>
+    parseJSON (Object v) = NCAAData <$>
         v .: "meta" <*>
         v .: "periods"
 
@@ -30,7 +30,7 @@ data NCAAMeta = NCAAMeta {
     } deriving Show
 
 instance FromJSON NCAAMeta where
-    parseJSON (Object v) = trace "NCAAMeta" $ NCAAMeta <$>
+    parseJSON (Object v) = NCAAMeta <$>
         v .: "title" <*>
         v .: "description" <*>
         v .: "division" <*>
@@ -52,7 +52,7 @@ data NCAATeam = NCAATeam {
     } deriving Show
 
 instance FromJSON NCAATeam where
-    parseJSON (Object v) = trace "NCAATeam" $ NCAATeam <$>
+    parseJSON (Object v) = NCAATeam <$>
         v .: "homeTeam" <*>
         v .: "id" <*>
         v .: "seoName" <*>
@@ -69,7 +69,7 @@ data NCAAPeriod = NCAAPeriod {
     } deriving Show
 
 instance FromJSON NCAAPeriod where
-    parseJSON (Object v) = trace "NCAAPeriod" $ NCAAPeriod <$>
+    parseJSON (Object v) = NCAAPeriod <$>
         v .: "periodNumber" <*>
         v .: "periodDisplay" <*>
         v .: "playStats"
@@ -111,12 +111,12 @@ teamFromNCAATeam ncaateam = Team h id' seoname abbr short nick color
         nick = ncaaTeamNickName ncaateam
         color = ncaaTeamColor ncaateam
 
-type Score = (Int, Int)
-type Time = Int -- number of seconds since start of period.
+type Score = Maybe (Int, Int)
+type Time = Double -- number of seconds since start of period.
 
 data Play = Play {
-    playVisitorText :: String,
-    playHomeText :: String,
+    playVisitorText :: Maybe String,
+    playHomeText :: Maybe String,
     playScore :: Score,
     playTime :: Time
     } deriving Show
@@ -125,8 +125,16 @@ data Play = Play {
 playFromNCAAPlayStats :: NCAAPlayStats -> Play
 playFromNCAAPlayStats ncaaplaystats = Play vtext htext score t
     where
-        vtext = ncaaPlayStatsVisitorText ncaaplaystats
-        htext = ncaaPlayStatsHomeText ncaaplaystats
+        vtext = let s = ncaaPlayStatsVisitorText ncaaplaystats in
+            case s of
+                [] -> Nothing
+                _ -> Just s
+
+        htext = let s = ncaaPlayStatsHomeText ncaaplaystats in
+            case s of
+                [] -> Nothing
+                _ -> Just s
+
         score = parseScore $ ncaaPlayStatsScore ncaaplaystats
         t = parseTime $ ncaaPlayStatsTime ncaaplaystats
 
@@ -143,10 +151,12 @@ periodFromNCAAPeriod ncaaperiod = Period pn pd plays
         pd = ncaaPeriodPeriodDisplay ncaaperiod
         plays = map playFromNCAAPlayStats $ ncaaPeriodPlayStats ncaaperiod
 
+
 type Division = String
 
 data GameStatus = Final | Ongoing
     deriving Show
+
 
 data Game = Game {
     gameDivision :: String,
@@ -170,6 +180,7 @@ gameFromNCAAData ncaadata = Game d status (t1, t2) isneut ps
         isneut = not $ homeTeam t1 || homeTeam t2
         ps = map periodFromNCAAPeriod $ ncaaDataPeriods ncaadata
 
+
 instance Eq Team where
     t1 == t2 = teamID t1 == teamID t2
 
@@ -184,7 +195,10 @@ parseTime t = 60*minutes + secs
         (minutes, secs) = (read *** read) (splitBy ':' t)
 
 parseScore :: String -> Score
-parseScore t = (read *** read) (splitBy '-' t)
+parseScore s = case t of
+        ([], []) -> Nothing
+        _ -> Just $ (read *** read) t
+    where t = splitBy '-' s
 
 splitBy' :: Eq a => a -> [a] -> [a] -> ([a], [a])
 splitBy' _ ys [] = (reverse ys, [])
