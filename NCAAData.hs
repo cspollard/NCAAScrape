@@ -1,14 +1,15 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module NCAAGame where
+module NCAAData where
 
 import Control.Applicative
+import Control.Arrow
 import Data.Aeson
 
 import Debug.Trace (trace)
 data NCAAData = NCAAData {
-    dataMeta :: NCAAMeta,
-    dataPeriods :: [NCAAPeriod]
+    ncaaDataMeta :: NCAAMeta,
+    ncaaDataPeriods :: [NCAAPeriod]
     } deriving Show
 
 instance FromJSON NCAAData where
@@ -18,14 +19,14 @@ instance FromJSON NCAAData where
 
 
 data NCAAMeta = NCAAMeta {
-    metaTitle :: String,
-    metaDescription :: String,
-    metaDivision :: String,
-    metaStatus :: String,
-    metaPeriod :: String,
-    metaMinutes :: String,
-    metaSeconds :: String,
-    metaTeams :: [NCAATeam]
+    ncaaMetaTitle :: String,
+    ncaaMetaDescription :: String,
+    ncaaMetaDivision :: String,
+    ncaaMetaStatus :: String,
+    ncaaMetaPeriod :: String,
+    ncaaMetaMinutes :: String,
+    ncaaMetaSeconds :: String,
+    ncaaMetaTeams :: [NCAATeam]
     } deriving Show
 
 instance FromJSON NCAAMeta where
@@ -41,13 +42,13 @@ instance FromJSON NCAAMeta where
 
 
 data NCAATeam = NCAATeam {
-    teamHomeTeam :: String,
-    teamID :: String,
-    teamSeoName :: String,
-    teamSixCharAbbr :: String,
-    teamShortName :: String,
-    teamNickName :: String,
-    teamColor :: String
+    ncaaTeamHomeTeam :: String,
+    ncaaTeamID :: String,
+    ncaaTeamSeoName :: String,
+    ncaaTeamSixCharAbbr :: String,
+    ncaaTeamShortName :: String,
+    ncaaTeamNickName :: String,
+    ncaaTeamColor :: String
     } deriving Show
 
 instance FromJSON NCAATeam where
@@ -62,9 +63,9 @@ instance FromJSON NCAATeam where
 
 
 data NCAAPeriod = NCAAPeriod {
-    periodPeriodNumber :: String,
-    periodPeriodDisplay :: String,
-    periodPlayStats :: [NCAAPlayStats]
+    ncaaPeriodPeriodNumber :: String,
+    ncaaPeriodPeriodDisplay :: String,
+    ncaaPeriodPlayStats :: [NCAAPlayStats]
     } deriving Show
 
 instance FromJSON NCAAPeriod where
@@ -75,10 +76,10 @@ instance FromJSON NCAAPeriod where
 
 
 data NCAAPlayStats = NCAAPlayStats {
-    playStatsScore :: String,
-    playStatsTime :: String,
-    playStatsVisitorText :: String,
-    playStatsHomeText :: String}
+    ncaaPlayStatsScore :: String,
+    ncaaPlayStatsTime :: String,
+    ncaaPlayStatsVisitorText :: String,
+    ncaaPlayStatsHomeText :: String}
     deriving Show
 
 instance FromJSON NCAAPlayStats where
@@ -88,9 +89,6 @@ instance FromJSON NCAAPlayStats where
         v .: "visitorText" <*>
         v .: "homeText"
 
-{-
-class FromValue a where
-    fromValue :: Value -> a
 
 data Team = Team {
     homeTeam :: Bool,
@@ -102,16 +100,16 @@ data Team = Team {
     teamColor :: String
     } deriving Show
 
-instance FromValue Team where
-    fromValue (Object v) = Team
-        ((v ! "homeTeam") == "true")
-        (read (v ! "id"))
-        (v ! "seoName")
-        (v ! "sixCharAbbr")
-        (v ! "shortName")
-        (v ! "nickName")
-        (v ! "color")
-
+teamFromNCAATeam :: NCAATeam -> Team
+teamFromNCAATeam ncaateam = Team h id' seoname abbr short nick color
+    where
+        h = ncaaTeamHomeTeam ncaateam == "true"
+        id' = read $ ncaaTeamID ncaateam
+        seoname = ncaaTeamSeoName ncaateam
+        abbr = ncaaTeamSixCharAbbr ncaateam
+        short = ncaaTeamShortName ncaateam
+        nick = ncaaTeamNickName ncaateam
+        color = ncaaTeamColor ncaateam
 
 type Score = (Int, Int)
 type Time = Int -- number of seconds since start of period.
@@ -123,10 +121,27 @@ data Play = Play {
     playTime :: Time
     } deriving Show
 
+
+playFromNCAAPlayStats :: NCAAPlayStats -> Play
+playFromNCAAPlayStats ncaaplaystats = Play vtext htext score t
+    where
+        vtext = ncaaPlayStatsVisitorText ncaaplaystats
+        htext = ncaaPlayStatsHomeText ncaaplaystats
+        score = parseScore $ ncaaPlayStatsScore ncaaplaystats
+        t = parseTime $ ncaaPlayStatsTime ncaaplaystats
+
 data Period = Period {
     periodNumber :: Int,
+    periodDisplay :: String,
     periodPlays :: [Play]
     } deriving Show
+
+periodFromNCAAPeriod :: NCAAPeriod -> Period
+periodFromNCAAPeriod ncaaperiod = Period pn pd plays
+    where
+        pn = read $ ncaaPeriodPeriodNumber ncaaperiod
+        pd = ncaaPeriodPeriodDisplay ncaaperiod
+        plays = map playFromNCAAPlayStats $ ncaaPeriodPlayStats ncaaperiod
 
 type Division = String
 
@@ -134,11 +149,26 @@ data GameStatus = Final | Ongoing
     deriving Show
 
 data Game = Game {
+    gameDivision :: String,
     gameStatus :: GameStatus,
     gameTeams :: (Team, Team),
     gameIsNeutral :: Bool,
     gamePeriods :: [Period]
     } deriving Show
+
+gameFromNCAAData :: NCAAData -> Game
+gameFromNCAAData ncaadata = Game d status (t1, t2) isneut ps
+    where
+        meta = ncaaDataMeta ncaadata
+        d = ncaaMetaDivision meta
+        status = case ncaaMetaStatus meta of
+            "Final" -> Final
+            _ -> Ongoing
+
+        t1 : t2 : _ = map teamFromNCAATeam $ ncaaMetaTeams meta
+
+        isneut = not $ homeTeam t1 || homeTeam t2
+        ps = map periodFromNCAAPeriod $ ncaaDataPeriods ncaadata
 
 instance Eq Team where
     t1 == t2 = teamID t1 == teamID t2
@@ -149,7 +179,12 @@ instance Ord Team where
 
 
 parseTime :: String -> Time
-parseTime t = (read *** read) (splitBy ':' t)
+parseTime t = 60*minutes + secs
+    where
+        (minutes, secs) = (read *** read) (splitBy ':' t)
+
+parseScore :: String -> Score
+parseScore t = (read *** read) (splitBy '-' t)
 
 splitBy' :: Eq a => a -> [a] -> [a] -> ([a], [a])
 splitBy' _ ys [] = (reverse ys, [])
@@ -159,4 +194,3 @@ splitBy' x ys (z:zs) = if x == z
 
 splitBy :: Eq a => a -> [a] -> ([a], [a])
 splitBy x = splitBy' x []
--}
