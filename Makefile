@@ -1,2 +1,2 @@
-test: *.hs
-	ghc --make test
+Main: *.hs
+	ghc --make Main
