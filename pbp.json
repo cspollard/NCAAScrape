@@ -1,0 +1,1957 @@
+{
+    "meta" : {
+        "title": " Play-By-Play",
+        "description": "Play-By-Play for Stanford vs Arizona",
+        "division": "d1",
+        "status" : "Final",
+        "period": "2",
+        "minutes": "0",
+        "seconds" : "00",
+        "teams":[
+        {      
+
+            "homeTeam": "true",
+            "id": "2338",
+            "seoName": "stanford",
+            "sixCharAbbr": "STAN",
+            "shortName": "Stanford",	
+            "nickName": "Cardinal",		
+            "color": "#8C1515"						
+
+        },
+        {
+
+            "homeTeam": "false",
+            "id": "2212",
+            "seoName": "arizona",
+            "sixCharAbbr": "ARIZ",
+            "shortName": "Arizona",	
+            "nickName": "Wildcats",		
+            "color": "#003366"						
+
+        }
+        ]
+    },
+
+    "periods":[
+
+
+    {    
+        "periodNumber":"1",
+        "periodDisplay":"1st Half",	  
+        "playStats":[
+
+        {
+            "score":"",
+            "time":"20:00",
+            "visitorText":"",
+            "homeText":"Start of the 1st Half"
+        },
+        {
+            "score":"0-2",
+            "time":"19:29",
+            "visitorText":"",
+            "homeText":"Stefan Nastic makes a jump shot from 8 feet out."
+        },
+        {
+            "score":"",
+            "time":"19:19",
+            "visitorText":"Nick Johnson misses a jump shot from 15 feet out.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"19:19",
+            "visitorText":"",
+            "homeText":"Josh Huestis with a defensive rebound."
+        },
+        {
+            "score":"",
+            "time":"19:06",
+            "visitorText":"",
+            "homeText":"Stefan Nastic with a lost ball turnover: Lost Ball"
+        },
+        {
+            "score":"",
+            "time":"19:00",
+            "visitorText":"Aaron Gordon misses a layup shot.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"19:00",
+            "visitorText":"",
+            "homeText":"Stan with a defensive rebound."
+        },
+        {
+            "score":"",
+            "time":"18:36",
+            "visitorText":"",
+            "homeText":"Stefan Nastic misses a jump shot from 17 feet out."
+        },
+        {
+            "score":"",
+            "time":"18:36",
+            "visitorText":"T.J. McConnell with a defensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"18:13",
+            "visitorText":"Kaleb Tarczewski misses a jump shot from 5 feet out.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"18:13",
+            "visitorText":"",
+            "homeText":"Chasson Randle with a defensive rebound."
+        },
+        {
+            "score":"",
+            "time":"18:01",
+            "visitorText":"",
+            "homeText":"Dwight Powell misses a layup shot."
+        },
+        {
+            "score":"",
+            "time":"18:01",
+            "visitorText":"Kaleb Tarczewski with a defensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"2-2",
+            "time":"17:53",
+            "visitorText":"T.J. McConnell makes a jump shot from 10 feet out.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"17:40",
+            "visitorText":"Shooting foul committed by Brandon Ashley.",
+            "homeText":""
+        },
+        {
+            "score":"2-3",
+            "time":"17:40",
+            "visitorText":"",
+            "homeText":"Dwight Powell makes free throw 1 of 2."
+        },
+        {
+            "score":"",
+            "time":"17:40",
+            "visitorText":"",
+            "homeText":"Dwight Powell misses free throw 2 of 2."
+        },
+        {
+            "score":"",
+            "time":"17:40",
+            "visitorText":"Nick Johnson with a defensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"17:29",
+            "visitorText":"Brandon Ashley misses a jump shot from 16 feet out.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"17:29",
+            "visitorText":"",
+            "homeText":"Dwight Powell with a defensive rebound."
+        },
+        {
+            "score":"2-5",
+            "time":"17:14",
+            "visitorText":"",
+            "homeText":"Stefan Nastic makes a jump shot from 15 feet out. Chasson Randle with the assist."
+        },
+        {
+            "score":"",
+            "time":"16:57",
+            "visitorText":"Aaron Gordon misses a 3-point jump shot from 25 feet out.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"16:57",
+            "visitorText":"",
+            "homeText":"Anthony Brown with a defensive rebound."
+        },
+        {
+            "score":"",
+            "time":"16:29",
+            "visitorText":"Personal foul committed by Nick Johnson.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"16:20",
+            "visitorText":"Shooting foul committed by Aaron Gordon.",
+            "homeText":""
+        },
+        {
+            "score":"2-6",
+            "time":"16:20",
+            "visitorText":"",
+            "homeText":"Dwight Powell makes free throw 1 of 2."
+        },
+        {
+            "score":"2-7",
+            "time":"16:20",
+            "visitorText":"",
+            "homeText":"Dwight Powell makes free throw 2 of 2."
+        },
+        {
+            "score":"",
+            "time":"15:51",
+            "visitorText":"Kaleb Tarczewski misses a jump shot from 7 feet out.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"15:51",
+            "visitorText":"",
+            "homeText":"Dwight Powell with a defensive rebound."
+        },
+        {
+            "score":"2-9",
+            "time":"15:39",
+            "visitorText":"",
+            "homeText":"Dwight Powell makes a hook shot from 7 feet out."
+        },
+        {
+            "score":"",
+            "time":"15:27",
+            "visitorText":"Brandon Ashley misses a 3-point jump shot from 24 feet out.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"15:27",
+            "visitorText":"",
+            "homeText":"Chasson Randle with a defensive rebound."
+        },
+        {
+            "score":"",
+            "time":"15:16",
+            "visitorText":"",
+            "homeText":"Chasson Randle with a lost ball turnover: Lost Ball"
+        },
+        {
+            "score":"",
+            "time":"15:13",
+            "visitorText":"",
+            "homeText":"Shooting foul committed by Dwight Powell."
+        },
+        {
+            "score":"",
+            "time":"15:13",
+            "visitorText":"",
+            "homeText":"Official TV timeout."
+        },
+        {
+            "score":"3-9",
+            "time":"15:13",
+            "visitorText":"Brandon Ashley makes free throw 1 of 2.",
+            "homeText":""
+        },
+        {
+            "score":"4-9",
+            "time":"15:13",
+            "visitorText":"Brandon Ashley makes free throw 2 of 2.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"14:50",
+            "visitorText":"",
+            "homeText":"Dwight Powell with a traveling turnover: Traveling"
+        },
+        {
+            "score":"",
+            "time":"14:34",
+            "visitorText":"Offensive foul committed by Kaleb Tarczewski.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"14:34",
+            "visitorText":"Kaleb Tarczewski with a  turnover:",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"14:21",
+            "visitorText":"",
+            "homeText":"Josh Huestis misses a jump shot from 14 feet out."
+        },
+        {
+            "score":"",
+            "time":"14:21",
+            "visitorText":"Aaron Gordon with a defensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"14:11",
+            "visitorText":"",
+            "homeText":"Shooting foul committed by Stefan Nastic."
+        },
+        {
+            "score":"",
+            "time":"14:11",
+            "visitorText":"Rondae Hollis-Jefferson misses free throw 1 of 2.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"14:11",
+            "visitorText":"Ari with an offensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"14:11",
+            "visitorText":"Rondae Hollis-Jefferson misses free throw 2 of 2.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"14:11",
+            "visitorText":"",
+            "homeText":"Anthony Brown with a defensive rebound."
+        },
+        {
+            "score":"",
+            "time":"13:50",
+            "visitorText":"",
+            "homeText":"Josh Huestis misses a jump shot from 6 feet out."
+        },
+        {
+            "score":"",
+            "time":"13:50",
+            "visitorText":"Rondae Hollis-Jefferson with a defensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"13:43",
+            "visitorText":"Offensive foul committed by Rondae Hollis-Jefferson.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"13:43",
+            "visitorText":"Rondae Hollis-Jefferson with a  turnover:",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"13:25",
+            "visitorText":"",
+            "homeText":"Dwight Powell misses a jump shot from 12 feet out."
+        },
+        {
+            "score":"",
+            "time":"13:25",
+            "visitorText":"T.J. McConnell with a defensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"13:01",
+            "visitorText":"",
+            "homeText":"Shooting foul committed by John Gage."
+        },
+        {
+            "score":"5-9",
+            "time":"13:01",
+            "visitorText":"Kaleb Tarczewski makes free throw 1 of 2.",
+            "homeText":""
+        },
+        {
+            "score":"6-9",
+            "time":"13:01",
+            "visitorText":"Kaleb Tarczewski makes free throw 2 of 2.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"12:46",
+            "visitorText":"",
+            "homeText":"Dwight Powell with a out of bounds turnover: Out of Bounds"
+        },
+        {
+            "score":"",
+            "time":"12:37",
+            "visitorText":"Nick Johnson misses a 3-point jump shot from 25 feet out.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"12:37",
+            "visitorText":"Ari with an offensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"12:34",
+            "visitorText":"",
+            "homeText":"Personal foul committed by John Gage."
+        },
+        {
+            "score":"8-9",
+            "time":"12:28",
+            "visitorText":"Rondae Hollis-Jefferson makes a jump shot from 13 feet out. Gabe York with the assist.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"12:06",
+            "visitorText":"",
+            "homeText":"Chasson Randle misses a jump shot from 9 feet out."
+        },
+        {
+            "score":"",
+            "time":"12:06",
+            "visitorText":"Nick Johnson with a defensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"10-9",
+            "time":"11:58",
+            "visitorText":"T.J. McConnell makes a layup shot. Nick Johnson with the assist.",
+            "homeText":""
+        },
+        {
+            "score":"10-11",
+            "time":"11:31",
+            "visitorText":"",
+            "homeText":"Anthony Brown makes a jump shot from 18 feet out."
+        },
+        {
+            "score":"",
+            "time":"11:19",
+            "visitorText":"T.J. McConnell misses a 3-point jump shot from 24 feet out.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"11:19",
+            "visitorText":"",
+            "homeText":"Dwight Powell with a defensive rebound."
+        },
+        {
+            "score":"",
+            "time":"11:17",
+            "visitorText":"",
+            "homeText":"Personal foul committed by Dwight Powell."
+        },
+        {
+            "score":"",
+            "time":"11:17",
+            "visitorText":"",
+            "homeText":"Official TV timeout."
+        },
+        {
+            "score":"12-11",
+            "time":"11:00",
+            "visitorText":"T.J. McConnell makes a jump shot from 17 feet out.",
+            "homeText":""
+        },
+        {
+            "score":"12-14",
+            "time":"10:36",
+            "visitorText":"",
+            "homeText":"Anthony Brown makes a 3-point jump shot from 25 feet out. Chasson Randle with the assist."
+        },
+        {
+            "score":"",
+            "time":"10:07",
+            "visitorText":"",
+            "homeText":"Personal foul committed by Josh Huestis."
+        },
+        {
+            "score":"",
+            "time":"10:07",
+            "visitorText":"",
+            "homeText":"Personal foul committed by Robbie Lemons."
+        },
+        {
+            "score":"13-14",
+            "time":"10:07",
+            "visitorText":"Nick Johnson makes free throw 1st of 1-and-1.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"10:07",
+            "visitorText":"T.J. McConnell misses free throw 2nd of 1-and-1.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"10:07",
+            "visitorText":"",
+            "homeText":"Robbie Lemons with a defensive rebound."
+        },
+        {
+            "score":"",
+            "time":"9:53",
+            "visitorText":"",
+            "homeText":"Josh Huestis misses a layup shot."
+        },
+        {
+            "score":"",
+            "time":"9:53",
+            "visitorText":"Aaron Gordon with a defensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"15-14",
+            "time":"9:46",
+            "visitorText":"Aaron Gordon makes a jump shot from 7 feet out.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"9:33",
+            "visitorText":"",
+            "homeText":"Chasson Randle misses a layup shot."
+        },
+        {
+            "score":"",
+            "time":"9:33",
+            "visitorText":"T.J. McConnell with a defensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"18-14",
+            "time":"9:25",
+            "visitorText":"Nick Johnson makes a 3-point jump shot from 24 feet out. T.J. McConnell with the assist.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"9:20",
+            "visitorText":"",
+            "homeText":"Stan take a 20-second timeout."
+        },
+        {
+            "score":"",
+            "time":"9:10",
+            "visitorText":"Personal foul committed by Nick Johnson.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"9:08",
+            "visitorText":"",
+            "homeText":"Chasson Randle misses a 3-point jump shot from 23 feet out."
+        },
+        {
+            "score":"",
+            "time":"9:08",
+            "visitorText":"",
+            "homeText":"Stefan Nastic with an offensive rebound."
+        },
+        {
+            "score":"",
+            "time":"9:00",
+            "visitorText":"",
+            "homeText":"Anthony Brown misses a 3-point jump shot from 24 feet out."
+        },
+        {
+            "score":"",
+            "time":"9:00",
+            "visitorText":"Gabe York with a defensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"8:45",
+            "visitorText":"Jordin Mayes with a traveling turnover: Traveling",
+            "homeText":""
+        },
+        {
+            "score":"18-16",
+            "time":"8:33",
+            "visitorText":"",
+            "homeText":"Josh Huestis makes a jump shot from 15 feet out. Chasson Randle with the assist."
+        },
+        {
+            "score":"20-16",
+            "time":"8:10",
+            "visitorText":"Kaleb Tarczewski makes a layup shot. T.J. McConnell with the assist.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"8:10",
+            "visitorText":"",
+            "homeText":"Shooting foul committed by Stefan Nastic."
+        },
+        {
+            "score":"21-16",
+            "time":"8:10",
+            "visitorText":"Kaleb Tarczewski makes free throw 1 of 1.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"7:55",
+            "visitorText":"",
+            "homeText":"Chasson Randle misses a jump shot from 13 feet out."
+        },
+        {
+            "score":"",
+            "time":"7:55",
+            "visitorText":"T.J. McConnell with a defensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"7:48",
+            "visitorText":"Jordin Mayes misses a layup shot.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"7:48",
+            "visitorText":"",
+            "homeText":"Josh Huestis with a defensive rebound."
+        },
+        {
+            "score":"",
+            "time":"7:43",
+            "visitorText":"Shooting foul committed by T.J. McConnell.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"7:43",
+            "visitorText":"",
+            "homeText":"Official TV timeout."
+        },
+        {
+            "score":"",
+            "time":"7:43",
+            "visitorText":"",
+            "homeText":"Chasson Randle misses free throw 1 of 2."
+        },
+        {
+            "score":"",
+            "time":"7:43",
+            "visitorText":"",
+            "homeText":"Stan with an offensive rebound."
+        },
+        {
+            "score":"21-17",
+            "time":"7:43",
+            "visitorText":"",
+            "homeText":"Chasson Randle makes free throw 2 of 2."
+        },
+        {
+            "score":"",
+            "time":"7:39",
+            "visitorText":"Rondae Hollis-Jefferson with a backcourt turnover turnover: Backcourt Turnover",
+            "homeText":""
+        },
+        {
+            "score":"21-19",
+            "time":"7:21",
+            "visitorText":"",
+            "homeText":"Josh Huestis makes a jump shot from 13 feet out."
+        },
+        {
+            "score":"",
+            "time":"6:41",
+            "visitorText":"Brandon Ashley misses a 3-point jump shot from 24 feet out.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"6:41",
+            "visitorText":"",
+            "homeText":"Chasson Randle with a defensive rebound."
+        },
+        {
+            "score":"",
+            "time":"6:35",
+            "visitorText":"Shooting foul committed by Gabe York.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"6:35",
+            "visitorText":"",
+            "homeText":"Chasson Randle misses free throw 1 of 2."
+        },
+        {
+            "score":"",
+            "time":"6:35",
+            "visitorText":"",
+            "homeText":"Stan with an offensive rebound."
+        },
+        {
+            "score":"",
+            "time":"6:35",
+            "visitorText":"",
+            "homeText":"Chasson Randle misses free throw 2 of 2."
+        },
+        {
+            "score":"",
+            "time":"6:35",
+            "visitorText":"Ari with a defensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"6:28",
+            "visitorText":"",
+            "homeText":"Personal foul committed by Grant Verhoeven."
+        },
+        {
+            "score":"",
+            "time":"6:28",
+            "visitorText":"Rondae Hollis-Jefferson misses free throw 1 of 2.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"6:28",
+            "visitorText":"Ari with an offensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"6:28",
+            "visitorText":"Rondae Hollis-Jefferson misses free throw 2 of 2.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"6:28",
+            "visitorText":"",
+            "homeText":"Josh Huestis with a defensive rebound."
+        },
+        {
+            "score":"",
+            "time":"6:13",
+            "visitorText":"",
+            "homeText":"Josh Huestis misses a 3-point jump shot from 25 feet out."
+        },
+        {
+            "score":"",
+            "time":"6:13",
+            "visitorText":"Kaleb Tarczewski with a defensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"5:39",
+            "visitorText":"",
+            "homeText":"Shooting foul committed by Grant Verhoeven."
+        },
+        {
+            "score":"",
+            "time":"5:39",
+            "visitorText":"Rondae Hollis-Jefferson misses free throw 1 of 2.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"5:39",
+            "visitorText":"Ari with an offensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"5:39",
+            "visitorText":"Ari take a 20-second timeout.",
+            "homeText":""
+        },
+        {
+            "score":"22-19",
+            "time":"5:39",
+            "visitorText":"Rondae Hollis-Jefferson makes free throw 2 of 2.",
+            "homeText":""
+        },
+        {
+            "score":"22-21",
+            "time":"5:16",
+            "visitorText":"",
+            "homeText":"Marcus Allen makes a jump shot from 18 feet out."
+        },
+        {
+            "score":"",
+            "time":"4:59",
+            "visitorText":"Rondae Hollis-Jefferson with a lost ball turnover: Lost Ball",
+            "homeText":""
+        },
+        {
+            "score":"22-23",
+            "time":"4:53",
+            "visitorText":"",
+            "homeText":"Chasson Randle makes a layup shot."
+        },
+        {
+            "score":"",
+            "time":"4:36",
+            "visitorText":"",
+            "homeText":"Shooting foul committed by Grant Verhoeven."
+        },
+        {
+            "score":"",
+            "time":"4:36",
+            "visitorText":"Aaron Gordon misses free throw 1 of 2.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"4:36",
+            "visitorText":"Ari with an offensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"23-23",
+            "time":"4:36",
+            "visitorText":"Aaron Gordon makes free throw 2 of 2.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"4:16",
+            "visitorText":"Shooting foul committed by T.J. McConnell.",
+            "homeText":""
+        },
+        {
+            "score":"23-24",
+            "time":"4:16",
+            "visitorText":"",
+            "homeText":"Chasson Randle makes free throw 1 of 2."
+        },
+        {
+            "score":"23-25",
+            "time":"4:16",
+            "visitorText":"",
+            "homeText":"Chasson Randle makes free throw 2 of 2."
+        },
+        {
+            "score":"26-25",
+            "time":"3:58",
+            "visitorText":"T.J. McConnell makes a 3-point jump shot from 23 feet out. Gabe York with the assist.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"3:35",
+            "visitorText":"",
+            "homeText":"Chasson Randle with a lost ball turnover: Lost Ball"
+        },
+        {
+            "score":"",
+            "time":"3:35",
+            "visitorText":"",
+            "homeText":"Personal foul committed by Marcus Allen."
+        },
+        {
+            "score":"",
+            "time":"3:34",
+            "visitorText":"",
+            "homeText":"Official TV timeout."
+        },
+        {
+            "score":"",
+            "time":"3:34",
+            "visitorText":"Nick Johnson misses free throw 1 of 2.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"3:34",
+            "visitorText":"Ari with an offensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"3:34",
+            "visitorText":"Nick Johnson misses free throw 2 of 2.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"3:34",
+            "visitorText":"",
+            "homeText":"Josh Huestis with a defensive rebound."
+        },
+        {
+            "score":"",
+            "time":"3:14",
+            "visitorText":"",
+            "homeText":"Anthony Brown misses a jump shot from 15 feet out."
+        },
+        {
+            "score":"",
+            "time":"3:14",
+            "visitorText":"Ari with a defensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"2:53",
+            "visitorText":"",
+            "homeText":"Personal foul committed by Marcus Allen."
+        },
+        {
+            "score":"27-25",
+            "time":"2:53",
+            "visitorText":"Gabe York makes free throw 1 of 2.",
+            "homeText":""
+        },
+        {
+            "score":"28-25",
+            "time":"2:53",
+            "visitorText":"Gabe York makes free throw 2 of 2.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"2:38",
+            "visitorText":"",
+            "homeText":"Chasson Randle misses a 3-point jump shot from 25 feet out."
+        },
+        {
+            "score":"",
+            "time":"2:38",
+            "visitorText":"T.J. McConnell with a defensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"2:29",
+            "visitorText":"Kaleb Tarczewski misses a dunk shot.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"2:29",
+            "visitorText":"",
+            "homeText":"Anthony Brown with a defensive rebound."
+        },
+        {
+            "score":"",
+            "time":"2:04",
+            "visitorText":"",
+            "homeText":"Josh Huestis misses a 3-point jump shot from 24 feet out."
+        },
+        {
+            "score":"",
+            "time":"2:04",
+            "visitorText":"T.J. McConnell with a defensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"1:45",
+            "visitorText":"Offensive foul committed by Brandon Ashley.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"1:45",
+            "visitorText":"Brandon Ashley with a  turnover:",
+            "homeText":""
+        },
+        {
+            "score":"28-27",
+            "time":"1:29",
+            "visitorText":"",
+            "homeText":"Stefan Nastic makes a jump shot from 8 feet out."
+        },
+        {
+            "score":"",
+            "time":"1:11",
+            "visitorText":"Aaron Gordon misses a jump shot from 13 feet out.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"1:11",
+            "visitorText":"Rondae Hollis-Jefferson with an offensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"1:08",
+            "visitorText":"",
+            "homeText":"Shooting foul committed by Josh Huestis."
+        },
+        {
+            "score":"29-27",
+            "time":"1:08",
+            "visitorText":"Rondae Hollis-Jefferson makes free throw 1 of 2.",
+            "homeText":""
+        },
+        {
+            "score":"30-27",
+            "time":"1:08",
+            "visitorText":"Rondae Hollis-Jefferson makes free throw 2 of 2.",
+            "homeText":""
+        },
+        {
+            "score":"30-29",
+            "time":"0:55.0",
+            "visitorText":"",
+            "homeText":"Chasson Randle makes a jump shot from 9 feet out."
+        },
+        {
+            "score":"",
+            "time":"0:38.4",
+            "visitorText":"Rondae Hollis-Jefferson misses a jump shot from 9 feet out.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"0:38.4",
+            "visitorText":"",
+            "homeText":"Josh Huestis with a defensive rebound."
+        },
+        {
+            "score":"30-31",
+            "time":"0:03.1",
+            "visitorText":"",
+            "homeText":"Anthony Brown makes a jump shot from 8 feet out."
+        },
+        {
+            "score":"",
+            "time":"0:00",
+            "visitorText":"",
+            "homeText":"End of the 1st Half"
+        }
+        ]
+    },
+    {    
+        "periodNumber":"2",
+        "periodDisplay":"2nd Half",	  
+        "playStats":[
+
+        {
+            "score":"",
+            "time":"20:00",
+            "visitorText":"",
+            "homeText":"Start of the 2nd Half"
+        },
+        {
+            "score":"33-31",
+            "time":"19:42",
+            "visitorText":"Nick Johnson makes a 3-point jump shot from 24 feet out. T.J. McConnell with the assist.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"19:21",
+            "visitorText":"Shooting foul committed by Kaleb Tarczewski.",
+            "homeText":""
+        },
+        {
+            "score":"33-32",
+            "time":"19:21",
+            "visitorText":"",
+            "homeText":"Stefan Nastic makes free throw 1 of 2."
+        },
+        {
+            "score":"33-33",
+            "time":"19:21",
+            "visitorText":"",
+            "homeText":"Stefan Nastic makes free throw 2 of 2."
+        },
+        {
+            "score":"",
+            "time":"18:52",
+            "visitorText":"T.J. McConnell misses a 3-point jump shot from 24 feet out.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"18:52",
+            "visitorText":"",
+            "homeText":"Stan with a defensive rebound."
+        },
+        {
+            "score":"",
+            "time":"18:34",
+            "visitorText":"",
+            "homeText":"Josh Huestis misses a jump shot from 10 feet out."
+        },
+        {
+            "score":"",
+            "time":"18:34",
+            "visitorText":"Nick Johnson with a defensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"18:21",
+            "visitorText":"Nick Johnson misses a jump shot from 9 feet out.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"18:21",
+            "visitorText":"",
+            "homeText":"Dwight Powell with a defensive rebound."
+        },
+        {
+            "score":"",
+            "time":"18:11",
+            "visitorText":"",
+            "homeText":"Anthony Brown misses a layup shot."
+        },
+        {
+            "score":"",
+            "time":"18:11",
+            "visitorText":"",
+            "homeText":"Josh Huestis with an offensive rebound."
+        },
+        {
+            "score":"33-36",
+            "time":"17:58",
+            "visitorText":"",
+            "homeText":"Josh Huestis makes a 3-point jump shot from 24 feet out. Stefan Nastic with the assist."
+        },
+        {
+            "score":"",
+            "time":"17:46",
+            "visitorText":"Ari take a 20-second timeout.",
+            "homeText":""
+        },
+        {
+            "score":"36-36",
+            "time":"17:34",
+            "visitorText":"Brandon Ashley makes a 3-point jump shot from 23 feet out. T.J. McConnell with the assist.",
+            "homeText":""
+        },
+        {
+            "score":"36-38",
+            "time":"17:04",
+            "visitorText":"",
+            "homeText":"Dwight Powell makes a jump shot from 17 feet out."
+        },
+        {
+            "score":"",
+            "time":"16:54",
+            "visitorText":"Aaron Gordon misses a 3-point jump shot from 24 feet out.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"16:54",
+            "visitorText":"",
+            "homeText":"Stan with a defensive rebound."
+        },
+        {
+            "score":"36-41",
+            "time":"16:23",
+            "visitorText":"",
+            "homeText":"Chasson Randle makes a 3-point jump shot from 24 feet out. Dwight Powell with the assist."
+        },
+        {
+            "score":"",
+            "time":"15:54",
+            "visitorText":"",
+            "homeText":"Official TV timeout."
+        },
+        {
+            "score":"39-41",
+            "time":"15:49",
+            "visitorText":"Gabe York makes a 3-point jump shot from 24 feet out. Nick Johnson with the assist.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"15:23",
+            "visitorText":"",
+            "homeText":"Josh Huestis misses a layup shot."
+        },
+        {
+            "score":"",
+            "time":"15:23",
+            "visitorText":"",
+            "homeText":"Stefan Nastic with an offensive rebound."
+        },
+        {
+            "score":"",
+            "time":"15:14",
+            "visitorText":"",
+            "homeText":"Anthony Brown misses a 3-point jump shot from 23 feet out."
+        },
+        {
+            "score":"",
+            "time":"15:14",
+            "visitorText":"",
+            "homeText":"Dwight Powell with an offensive rebound."
+        },
+        {
+            "score":"39-43",
+            "time":"15:05",
+            "visitorText":"",
+            "homeText":"Dwight Powell makes a tip shot."
+        },
+        {
+            "score":"41-43",
+            "time":"15:00",
+            "visitorText":"Rondae Hollis-Jefferson makes a layup shot.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"15:00",
+            "visitorText":"",
+            "homeText":"Shooting foul committed by Dwight Powell."
+        },
+        {
+            "score":"42-43",
+            "time":"15:00",
+            "visitorText":"Rondae Hollis-Jefferson makes free throw 1 of 1.",
+            "homeText":""
+        },
+        {
+            "score":"42-45",
+            "time":"14:45",
+            "visitorText":"",
+            "homeText":"Stefan Nastic makes a jump shot from 8 feet out."
+        },
+        {
+            "score":"",
+            "time":"14:34",
+            "visitorText":"Nick Johnson misses a jump shot from 8 feet out.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"14:34",
+            "visitorText":"Aaron Gordon with an offensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"14:28",
+            "visitorText":"Aaron Gordon misses a tip shot from 6 feet out.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"14:28",
+            "visitorText":"",
+            "homeText":"Josh Huestis with a defensive rebound."
+        },
+        {
+            "score":"42-47",
+            "time":"14:09",
+            "visitorText":"",
+            "homeText":"Josh Huestis makes a jump shot from 13 feet out."
+        },
+        {
+            "score":"",
+            "time":"13:57",
+            "visitorText":"Rondae Hollis-Jefferson misses a layup shot.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"13:57",
+            "visitorText":"",
+            "homeText":"Dwight Powell with a defensive rebound."
+        },
+        {
+            "score":"",
+            "time":"13:31",
+            "visitorText":"",
+            "homeText":"Chasson Randle misses a 3-point jump shot from 24 feet out."
+        },
+        {
+            "score":"",
+            "time":"13:31",
+            "visitorText":"",
+            "homeText":"Josh Huestis with an offensive rebound."
+        },
+        {
+            "score":"",
+            "time":"13:24",
+            "visitorText":"Personal foul committed by Kaleb Tarczewski.",
+            "homeText":""
+        },
+        {
+            "score":"42-49",
+            "time":"13:24",
+            "visitorText":"",
+            "homeText":"Dwight Powell makes a jump shot from 9 feet out."
+        },
+        {
+            "score":"",
+            "time":"13:14",
+            "visitorText":"Brandon Ashley misses a layup shot.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"13:14",
+            "visitorText":"Ari with an offensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"12:49",
+            "visitorText":"",
+            "homeText":"Shooting foul committed by Chasson Randle."
+        },
+        {
+            "score":"43-49",
+            "time":"12:49",
+            "visitorText":"Nick Johnson makes free throw 1 of 2.",
+            "homeText":""
+        },
+        {
+            "score":"44-49",
+            "time":"12:49",
+            "visitorText":"Nick Johnson makes free throw 2 of 2.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"12:34",
+            "visitorText":"Shooting foul committed by Brandon Ashley.",
+            "homeText":""
+        },
+        {
+            "score":"44-50",
+            "time":"12:34",
+            "visitorText":"",
+            "homeText":"Josh Huestis makes free throw 1 of 2."
+        },
+        {
+            "score":"44-51",
+            "time":"12:34",
+            "visitorText":"",
+            "homeText":"Josh Huestis makes free throw 2 of 2."
+        },
+        {
+            "score":"46-51",
+            "time":"12:22",
+            "visitorText":"Brandon Ashley makes a layup shot. Nick Johnson with the assist.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"12:22",
+            "visitorText":"",
+            "homeText":"Shooting foul committed by Dwight Powell."
+        },
+        {
+            "score":"47-51",
+            "time":"12:22",
+            "visitorText":"Brandon Ashley makes free throw 1 of 1.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"11:59",
+            "visitorText":"",
+            "homeText":"Chasson Randle misses a jump shot from 11 feet out."
+        },
+        {
+            "score":"",
+            "time":"11:59",
+            "visitorText":"",
+            "homeText":"Josh Huestis with an offensive rebound."
+        },
+        {
+            "score":"",
+            "time":"11:51",
+            "visitorText":"",
+            "homeText":"Josh Huestis misses a tip shot from 2 feet out."
+        },
+        {
+            "score":"",
+            "time":"11:51",
+            "visitorText":"Aaron Gordon with a defensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"11:46",
+            "visitorText":"Aaron Gordon misses a jump shot from 7 feet out.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"11:46",
+            "visitorText":"",
+            "homeText":"Stan with a defensive rebound."
+        },
+        {
+            "score":"",
+            "time":"11:44",
+            "visitorText":"",
+            "homeText":"Official TV timeout."
+        },
+        {
+            "score":"",
+            "time":"11:31",
+            "visitorText":"",
+            "homeText":"Stefan Nastic misses a jump shot from 7 feet out."
+        },
+        {
+            "score":"",
+            "time":"11:31",
+            "visitorText":"T.J. McConnell with a defensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"49-51",
+            "time":"11:23",
+            "visitorText":"T.J. McConnell makes a layup shot.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"11:03",
+            "visitorText":"",
+            "homeText":"Stefan Nastic misses a jump shot from 8 feet out."
+        },
+        {
+            "score":"",
+            "time":"11:03",
+            "visitorText":"Nick Johnson with a defensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"10:46",
+            "visitorText":"",
+            "homeText":"Personal foul committed by Robbie Lemons."
+        },
+        {
+            "score":"",
+            "time":"10:35",
+            "visitorText":"Rondae Hollis-Jefferson misses a layup shot.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"10:35",
+            "visitorText":"",
+            "homeText":"Stefan Nastic with a defensive rebound."
+        },
+        {
+            "score":"49-53",
+            "time":"10:04",
+            "visitorText":"",
+            "homeText":"Josh Huestis makes a jump shot from 21 feet out."
+        },
+        {
+            "score":"",
+            "time":"9:35",
+            "visitorText":"Offensive foul committed by Aaron Gordon.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"9:35",
+            "visitorText":"Aaron Gordon with a  turnover:",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"9:04",
+            "visitorText":"",
+            "homeText":"Chasson Randle misses a layup shot."
+        },
+        {
+            "score":"",
+            "time":"9:04",
+            "visitorText":"Brandon Ashley with a defensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"8:43",
+            "visitorText":"Brandon Ashley misses a jump shot from 6 feet out.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"8:43",
+            "visitorText":"",
+            "homeText":"Anthony Brown with a defensive rebound."
+        },
+        {
+            "score":"",
+            "time":"8:33",
+            "visitorText":"Personal foul committed by Kaleb Tarczewski.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"8:15",
+            "visitorText":"",
+            "homeText":"Josh Huestis with a lost ball turnover: Lost Ball"
+        },
+        {
+            "score":"",
+            "time":"8:10",
+            "visitorText":"Gabe York misses a 3-point jump shot from 24 feet out.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"8:10",
+            "visitorText":"",
+            "homeText":"Stefan Nastic with a defensive rebound."
+        },
+        {
+            "score":"",
+            "time":"7:43",
+            "visitorText":"",
+            "homeText":"Stan take a 20-second timeout."
+        },
+        {
+            "score":"",
+            "time":"7:23",
+            "visitorText":"",
+            "homeText":"Chasson Randle misses a jump shot from 9 feet out."
+        },
+        {
+            "score":"",
+            "time":"7:23",
+            "visitorText":"Brandon Ashley with a defensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"51-53",
+            "time":"7:09",
+            "visitorText":"Aaron Gordon makes a dunk shot. Nick Johnson with the assist.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"6:44",
+            "visitorText":"",
+            "homeText":"Anthony Brown misses a layup shot."
+        },
+        {
+            "score":"",
+            "time":"6:44",
+            "visitorText":"Aaron Gordon with a defensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"6:44",
+            "visitorText":"",
+            "homeText":"Personal foul committed by Anthony Brown."
+        },
+        {
+            "score":"",
+            "time":"6:44",
+            "visitorText":"",
+            "homeText":"Official TV timeout."
+        },
+        {
+            "score":"53-53",
+            "time":"6:35",
+            "visitorText":"Brandon Ashley makes a jump shot from 16 feet out. Rondae Hollis-Jefferson with the assist.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"6:05",
+            "visitorText":"",
+            "homeText":"Anthony Brown misses a layup shot."
+        },
+        {
+            "score":"",
+            "time":"6:05",
+            "visitorText":"T.J. McConnell with a defensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"5:57",
+            "visitorText":"Aaron Gordon misses a jump shot from 8 feet out.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"5:57",
+            "visitorText":"",
+            "homeText":"Chasson Randle with a defensive rebound."
+        },
+        {
+            "score":"",
+            "time":"5:29",
+            "visitorText":"",
+            "homeText":"Dwight Powell misses a jump shot from 7 feet out."
+        },
+        {
+            "score":"",
+            "time":"5:29",
+            "visitorText":"Aaron Gordon with a defensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"5:10",
+            "visitorText":"Rondae Hollis-Jefferson misses a jump shot from 6 feet out.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"5:10",
+            "visitorText":"Rondae Hollis-Jefferson with an offensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"5:02",
+            "visitorText":"Rondae Hollis-Jefferson misses a layup shot.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"5:02",
+            "visitorText":"",
+            "homeText":"Stefan Nastic with a defensive rebound."
+        },
+        {
+            "score":"",
+            "time":"4:46",
+            "visitorText":"Personal foul committed by T.J. McConnell.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"4:36",
+            "visitorText":"Shooting foul committed by Aaron Gordon.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"4:36",
+            "visitorText":"",
+            "homeText":"Dwight Powell misses free throw 1 of 2."
+        },
+        {
+            "score":"",
+            "time":"4:36",
+            "visitorText":"",
+            "homeText":"Stan with an offensive rebound."
+        },
+        {
+            "score":"",
+            "time":"4:36",
+            "visitorText":"",
+            "homeText":"Dwight Powell misses free throw 2 of 2."
+        },
+        {
+            "score":"",
+            "time":"4:36",
+            "visitorText":"Aaron Gordon with a defensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"4:27",
+            "visitorText":"Ari take a 20-second timeout.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"4:10",
+            "visitorText":"Brandon Ashley with a traveling turnover: Traveling",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"3:50",
+            "visitorText":"",
+            "homeText":"Chasson Randle misses a layup shot."
+        },
+        {
+            "score":"",
+            "time":"3:50",
+            "visitorText":"",
+            "homeText":"Chasson Randle with an offensive rebound."
+        },
+        {
+            "score":"",
+            "time":"3:46",
+            "visitorText":"",
+            "homeText":"Josh Huestis misses a layup shot."
+        },
+        {
+            "score":"",
+            "time":"3:46",
+            "visitorText":"",
+            "homeText":"Stan with an offensive rebound."
+        },
+        {
+            "score":"",
+            "time":"3:46",
+            "visitorText":"",
+            "homeText":"Official TV timeout."
+        },
+        {
+            "score":"",
+            "time":"3:45",
+            "visitorText":"",
+            "homeText":"Josh Huestis misses a layup shot."
+        },
+        {
+            "score":"",
+            "time":"3:45",
+            "visitorText":"Kaleb Tarczewski with a defensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"3:20",
+            "visitorText":"Aaron Gordon misses a jump shot from 16 feet out.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"3:20",
+            "visitorText":"",
+            "homeText":"Dwight Powell with a defensive rebound."
+        },
+        {
+            "score":"",
+            "time":"2:56",
+            "visitorText":"",
+            "homeText":"Josh Huestis misses a jump shot from 6 feet out."
+        },
+        {
+            "score":"",
+            "time":"2:56",
+            "visitorText":"Brandon Ashley with a defensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"2:44",
+            "visitorText":"Ari take a 20-second timeout.",
+            "homeText":""
+        },
+        {
+            "score":"55-53",
+            "time":"2:36",
+            "visitorText":"Nick Johnson makes a jump shot from 13 feet out.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"2:12",
+            "visitorText":"",
+            "homeText":"Stefan Nastic with a lost ball turnover: Lost Ball"
+        },
+        {
+            "score":"",
+            "time":"1:46",
+            "visitorText":"T.J. McConnell misses a jump shot from 14 feet out.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"1:46",
+            "visitorText":"Aaron Gordon with an offensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"1:39",
+            "visitorText":"Aaron Gordon misses a tip shot from 4 feet out.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"1:39",
+            "visitorText":"",
+            "homeText":"Josh Huestis with a defensive rebound."
+        },
+        {
+            "score":"55-55",
+            "time":"1:22",
+            "visitorText":"",
+            "homeText":"Dwight Powell makes a layup shot."
+        },
+        {
+            "score":"",
+            "time":"0:56.6",
+            "visitorText":"Brandon Ashley misses a jump shot from 13 feet out.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"0:56.6",
+            "visitorText":"Kaleb Tarczewski with an offensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"58-55",
+            "time":"0:50.7",
+            "visitorText":"Nick Johnson makes a 3-point jump shot from 24 feet out. Kaleb Tarczewski with the assist.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"0:45.1",
+            "visitorText":"",
+            "homeText":"Stan take a 20-second timeout."
+        },
+        {
+            "score":"",
+            "time":"0:37.2",
+            "visitorText":"",
+            "homeText":"Chasson Randle misses a layup shot."
+        },
+        {
+            "score":"",
+            "time":"0:37.2",
+            "visitorText":"Nick Johnson with a defensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"0:33.7",
+            "visitorText":"",
+            "homeText":"Personal foul committed by Chasson Randle."
+        },
+        {
+            "score":"",
+            "time":"0:33.7",
+            "visitorText":"",
+            "homeText":"Personal foul committed by Anthony Brown."
+        },
+        {
+            "score":"",
+            "time":"0:33.7",
+            "visitorText":"Nick Johnson misses free throw 1st of 1-and-1.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"0:33.7",
+            "visitorText":"",
+            "homeText":"Josh Huestis with a defensive rebound."
+        },
+        {
+            "score":"",
+            "time":"0:25.1",
+            "visitorText":"",
+            "homeText":"Stan take a 20-second timeout."
+        },
+        {
+            "score":"",
+            "time":"0:15.8",
+            "visitorText":"",
+            "homeText":"Josh Huestis misses a 3-point jump shot from 24 feet out."
+        },
+        {
+            "score":"",
+            "time":"0:15.8",
+            "visitorText":"Aaron Gordon with a defensive rebound.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"0:12.7",
+            "visitorText":"",
+            "homeText":"Personal foul committed by Chasson Randle."
+        },
+        {
+            "score":"",
+            "time":"0:11.6",
+            "visitorText":"Ari take a full timeout.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"0:11.6",
+            "visitorText":"Aaron Gordon misses free throw 1st of 1-and-1.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"0:11.6",
+            "visitorText":"",
+            "homeText":"Josh Huestis with a defensive rebound."
+        },
+        {
+            "score":"",
+            "time":"0:07.0",
+            "visitorText":"Personal foul committed by Nick Johnson.",
+            "homeText":""
+        },
+        {
+            "score":"58-56",
+            "time":"0:07.0",
+            "visitorText":"",
+            "homeText":"Chasson Randle makes free throw 1st of 1-and-1."
+        },
+        {
+            "score":"58-57",
+            "time":"0:07.0",
+            "visitorText":"",
+            "homeText":"Chasson Randle makes free throw 2nd of 1-and-1."
+        },
+        {
+            "score":"",
+            "time":"0:05.8",
+            "visitorText":"",
+            "homeText":"Personal foul committed by Anthony Brown."
+        },
+        {
+            "score":"59-57",
+            "time":"0:05.8",
+            "visitorText":"Nick Johnson makes free throw 1st of 1-and-1.",
+            "homeText":""
+        },
+        {
+            "score":"60-57",
+            "time":"0:05.8",
+            "visitorText":"Nick Johnson makes free throw 2nd of 1-and-1.",
+            "homeText":""
+        },
+        {
+            "score":"",
+            "time":"0:02.2",
+            "visitorText":"",
+            "homeText":"Chasson Randle misses a 3-point jump shot from 24 feet out."
+        },
+        {
+            "score":"",
+            "time":"0:02.2",
+            "visitorText":"",
+            "homeText":"John Gage with an offensive rebound."
+        },
+        {
+            "score":"",
+            "time":"0:00",
+            "visitorText":"",
+            "homeText":"End of the 2nd Half"
+        },
+        {
+            "score":"",
+            "time":"0:00",
+            "visitorText":"",
+            "homeText":"End of the Game"
+        }
+        ]
+    }
+
+    ]
+}
