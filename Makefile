@@ -1,2 +1,2 @@
-test: test.hs
+test: *.hs
 	ghc --make test
