@@ -15,6 +15,6 @@ testjson = "http://data.ncaa.com/sites/default/files/data/game/basketball-men/d1
 main :: IO ()
 main = do
     s <- runMaybeT $ openUrl testjson
-    print . decode . pack $ s
+    print $ (decode . pack) <$> s
 
     return ()
