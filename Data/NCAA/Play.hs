@@ -5,6 +5,7 @@ module Data.NCAA.Play where
 import Data.Aeson
 import Data.Aeson.Types (typeMismatch)
 import Control.Applicative
+import Data.Text (Text)
 
 import Data.NCAA.Score
 import Data.NCAA.Time
