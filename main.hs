@@ -12,7 +12,7 @@ import qualified Data.ByteString.Lazy as BSL (readFile)
 import Data.Aeson (eitherDecode)
 import Control.Applicative ((<$>))
 import Data.NCAA.Game
-import Data.NCAA.Meta
+import Data.NCAA.Play
 import Data.NCAA.Period
 
 testhtml :: String
@@ -25,7 +25,7 @@ testjson :: String
 testjson = "examplepbp.json"
 
 testperiod = "period.json"
-testmeta = "meta.json"
+testplay = "play.json"
 
 
 
@@ -36,5 +36,5 @@ main = do
     -- let w = liftM gameFromNCAAData $ (eitherDecode . pack . fromJust ) s
 
     -- g <- eitherDecode <$> BSL.readFile testjson :: IO (Either String Game)
-    g <- eitherDecode <$> BSL.readFile testmeta :: IO (Either String Meta)
+    g <- eitherDecode <$> BSL.readFile testplay :: IO (Either String Play)
     print g
