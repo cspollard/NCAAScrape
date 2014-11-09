@@ -5,9 +5,7 @@ import Control.Monad (liftM)
 import Control.Monad.Maybe (runMaybeT)
 import Data.Maybe (fromJust)
 import Data.Aeson
-import NCAAData
--- import Data.ByteString
--- import Data.ByteString.Char8 (pack)
+-- import Data.NCAA.
 import Data.ByteString.Lazy.Char8 (pack)
 
 testhtml :: String

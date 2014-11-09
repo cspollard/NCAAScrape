@@ -1,8 +1,12 @@
 module Data.NCAA.Game where
 
+import Data.Aeson
+import Data.NCAA.Period
+
+
 data NCAAData = NCAAData {
     ncaaDataMeta :: NCAAMeta,
-    ncaaDataPeriods :: [NCAAPeriod]
+    ncaaDataPeriods :: [Period]
     } deriving Show
 
 instance FromJSON NCAAData where
