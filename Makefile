@@ -1,2 +1,2 @@
-Main: Data/NCAA/*.hs
-	ghc --make Main
+main: main.hs Data/NCAA/*.hs
+	ghc --make main

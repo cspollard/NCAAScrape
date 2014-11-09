@@ -3,8 +3,11 @@
 module Data.NCAA.Team where
 
 import Data.Aeson
-import Data.Aeson.Types (typeMismatch)
 import Control.Applicative
+import qualified Data.Attoparsec.Text as AT
+import Data.Attoparsec.Text (decimal, hexadecimal, string, char)
+
+import Data.NCAA.Parse
 
 data Team = Team {
     home :: Bool,
@@ -14,20 +17,25 @@ data Team = Team {
     shortName :: String,
     nickName :: String,
     color :: Int
-} deriving Show
+    } deriving Show
 
+
+parserHome :: AT.Parser Bool
+parserHome = (string "true" *> return True) <|>
+                (string "false" *> return False)
+    
 
 instance FromJSON Team where
-    parseJSON (Object v) = Team <$>
-        v .: "homeTeam" <*>
-        v .: "id" <*>
-        v .: "seoName" <*>
-        v .: "sixCharAbbr" <*>
-        v .: "shortName" <*>
-        v .: "nickName" <*>
-        v .: "color"
-
-    parseJSON v = typeMismatch "failed to parse team." v
+    parseJSON = withObject "failed to parse team."
+                   (\o -> Team <$>
+                        (o .: "homeTeam" >>= parseText parserHome) <*>
+                        (o .: "id" >>= parseText decimal) <*>
+                        o .: "seoName" <*>
+                        o .: "sixCharAbbr" <*>
+                        o .: "shortName" <*>
+                        o .: "nickName" <*>
+                        (o .: "color" >>= parseText (char '#' *> hexadecimal))
+                    )
 
 
 instance Eq Team where
@@ -35,4 +43,3 @@ instance Eq Team where
 
 instance Ord Team where
     compare t1 t2 = compare (ident t1) (ident t2)
-

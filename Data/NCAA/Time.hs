@@ -3,25 +3,17 @@
 module Data.NCAA.Time where
 
 import Data.Aeson
-import Data.Aeson.Types (typeMismatch)
-import qualified Data.Text as T
-import Data.Text.Read (decimal)
 import Control.Applicative
 
+import Data.Attoparsec.Text (decimal, char)
+
+import Data.NCAA.Parse
+
 data Time = Time {
-    mins :: Int,
-    secs :: Int
-} deriving (Read, Show)
+    minutes :: Int,
+    seconds :: Int
+    } deriving (Read, Show, Eq, Ord)
 
 instance FromJSON Time where
-    parseJSON v@(String s) = Time <$> minutes' <*> seconds'
-                            where
-                                (minutes, seconds) = T.break (== ':') s
-                                minutes' = case decimal minutes of
-                                    Right (x, _) -> return x
-                                    _ -> typeMismatch "failed to evaluate score." v
-                                seconds' = case decimal seconds of
-                                    Right (x, _) -> return x
-                                    _ -> typeMismatch "failed to evaluate score." v
-
-    parseJSON v = typeMismatch "failed to evaluate time." v
+    parseJSON = parseText $
+                    Time <$> (decimal <* char ':') <*> decimal

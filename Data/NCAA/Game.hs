@@ -4,9 +4,6 @@ module Data.NCAA.Game where
 
 import Control.Applicative
 import Data.Aeson
-import Data.Aeson.Types (typeMismatch)
-
-import Data.HashMap.Strict ((!))
 
 import Data.NCAA.Meta
 import Data.NCAA.Period
@@ -18,10 +15,8 @@ data Game = Game {
     } deriving Show
 
 instance FromJSON Game where
-    parseJSON v@(Object o) = Game <$>
+    parseJSON = withObject "failed to parse game."
+                    (\o -> Game <$>
                         o .: "meta" <*>
                         o .: "periods"
-
-    parseJSON v = typeMismatch "failed to parse game." v
-
-
+                    )

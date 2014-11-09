@@ -3,7 +3,6 @@
 module Data.NCAA.Play where
 
 import Data.Aeson
-import Data.Aeson.Types (typeMismatch)
 import Control.Applicative
 import Data.Text (Text)
 
@@ -19,10 +18,10 @@ data Play = Play {
 } deriving Show
 
 instance FromJSON Play where
-    parseJSON (Object v) = Play <$>
-        v .: "score" <*>
-        v .: "time" <*>
-        v .: "visitorText" <*>
-        v .: "homeText"
-
-    parseJSON v = typeMismatch "failed to evaluate play." v
+    parseJSON = withObject "failed to parse play."
+                    (\o -> Play <$>
+                        o .: "score" <*>
+                        o .: "time" <*>
+                        o .: "visitorText" <*>
+                        o .: "homeText"
+                    )
