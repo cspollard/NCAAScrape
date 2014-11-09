@@ -1,17 +1,24 @@
+{-# LANGUAGE OverloadedStrings #-}
+
 module Data.NCAA.Team where
 
-data NCAATeam = NCAATeam {
-    ncaaTeamHomeTeam :: String,
-    ncaaTeamID :: String,
-    ncaaTeamSeoName :: String,
-    ncaaTeamSixCharAbbr :: String,
-    ncaaTeamShortName :: String,
-    ncaaTeamNickName :: String,
-    ncaaTeamColor :: String
-    } deriving Show
+import Data.Aeson
+import Data.Aeson.Types (typeMismatch)
+import Control.Applicative
 
-instance FromJSON NCAATeam where
-    parseJSON (Object v) = NCAATeam <$>
+data Team = Team {
+    home :: Bool,
+    ident :: Int,
+    seoName :: String,
+    abbr :: String,
+    shortName :: String,
+    nickName :: String,
+    color :: Int
+} deriving Show
+
+
+instance FromJSON Team where
+    parseJSON (Object v) = Team <$>
         v .: "homeTeam" <*>
         v .: "id" <*>
         v .: "seoName" <*>
@@ -20,33 +27,12 @@ instance FromJSON NCAATeam where
         v .: "nickName" <*>
         v .: "color"
 
-
-data Team = Team {
-    homeTeam :: Bool,
-    teamID :: Int,
-    teamSeoName :: String,
-    teamSixCharAbbr :: String,
-    teamShortName :: String,
-    teamNickName :: String,
-    teamColor :: String
-    } deriving Show
-
-teamFromNCAATeam :: NCAATeam -> Team
-teamFromNCAATeam ncaateam = Team h id' seoname abbr short nick color
-    where
-        h = ncaaTeamHomeTeam ncaateam == "true"
-        id' = read $ ncaaTeamID ncaateam
-        seoname = ncaaTeamSeoName ncaateam
-        abbr = ncaaTeamSixCharAbbr ncaateam
-        short = ncaaTeamShortName ncaateam
-        nick = ncaaTeamNickName ncaateam
-        color = ncaaTeamColor ncaateam
-
+    parseJSON v = typeMismatch "failed to parse team." v
 
 
 instance Eq Team where
-    t1 == t2 = teamID t1 == teamID t2
+    t1 == t2 = ident t1 == ident t2
 
 instance Ord Team where
-    compare t1 t2 = compare (teamID t1) (teamID t2)
+    compare t1 t2 = compare (ident t1) (ident t2)
 

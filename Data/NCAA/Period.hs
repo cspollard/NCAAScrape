@@ -1,28 +1,24 @@
+{-# LANGUAGE OverloadedStrings #-}
+
 module Data.NCAA.Period where
 
-data NCAAPeriod = NCAAPeriod {
-    ncaaPeriodPeriodNumber :: String,
-    ncaaPeriodPeriodDisplay :: String,
-    ncaaPeriodPlayStats :: [NCAAPlayStats]
-    } deriving Show
+import Data.Aeson
+import Data.Aeson.Types (typeMismatch)
+import Control.Applicative
 
-instance FromJSON NCAAPeriod where
-    parseJSON (Object v) = NCAAPeriod <$>
+import Data.NCAA.Play
+
+
+data Period = Period {
+    number :: Int,
+    display :: String,
+    plays :: [Play]
+} deriving Show
+
+instance FromJSON Period where
+    parseJSON (Object v) = Period <$>
         v .: "periodNumber" <*>
         v .: "periodDisplay" <*>
         v .: "playStats"
 
-
-
-data Period = Period {
-    periodNumber :: Int,
-    periodDisplay :: String,
-    periodPlays :: [Play]
-    } deriving Show
-
-periodFromNCAAPeriod :: NCAAPeriod -> Period
-periodFromNCAAPeriod ncaaperiod = Period pn pd plays
-    where
-        pn = read $ ncaaPeriodPeriodNumber ncaaperiod
-        pd = ncaaPeriodPeriodDisplay ncaaperiod
-        plays = map playFromNCAAPlayStats $ ncaaPeriodPlayStats ncaaperiod
+    parseJSON v = typeMismatch "failed to parse period." v
