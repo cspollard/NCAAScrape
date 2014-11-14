@@ -20,7 +20,7 @@ data Play = Play {
 instance FromJSON Play where
     parseJSON = withObject "failed to parse play."
                     (\o -> Play <$>
-                        o .:? "score" <*>
+                        o .: "score" <*>
                         o .: "time" <*>
                         o .: "visitorText" <*>
                         o .: "homeText"
