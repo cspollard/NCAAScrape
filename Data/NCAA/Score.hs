@@ -10,8 +10,9 @@ import Control.Applicative
 data Score = Score {
     home :: Int,
     away :: Int
-} deriving (Read, Show)
+} deriving (Read, Show, Ord, Eq)
 
 instance FromJSON Score where
     parseJSON = parseText $
-                    Score <$> (decimal <* char '-') <*> decimal
+                    -- home score second
+                    flip Score <$> (decimal <* char '-') <*> decimal

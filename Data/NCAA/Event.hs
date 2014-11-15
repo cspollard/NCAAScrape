@@ -7,19 +7,19 @@ import Data.Aeson ((.:), withObject, FromJSON(..))
 import qualified Data.Aeson as A
 import qualified Data.Aeson.Types as A
 import Control.Applicative
-import Data.Text (Text)
 
 import Data.NCAA.Score
 import Data.NCAA.Time
 import Data.NCAA.Parse
 
 import Data.NCAA.Play
+import Data.NCAA.Shot
 
 
 data PeriodType = FirstHalf
                 | SecondHalf
                 | Overtime Int
-                | Game
+                | GamePeriod
                 deriving Show
 
 half :: Parser PeriodType
@@ -30,7 +30,7 @@ overtime :: Parser PeriodType
 overtime = Overtime <$> decimal <* takeTill (== '.')
 
 game :: Parser PeriodType
-game = return Game <* string "Game"
+game = return GamePeriod <* string "Game"
 
 periodType :: Parser PeriodType
 periodType = choice [half, overtime, game] <?> "periodType"
@@ -111,3 +111,21 @@ toEvent o = -- check plays first: they are most common
 
 instance FromJSON Event where
     parseJSON v = withObject "failed to parse event." toEvent v <|> fail (show v)
+
+
+addHome :: Score -> Int -> Score
+addHome s i = Score (home s + i) (away s)
+
+addAway :: Score -> Int -> Score
+addAway s i = Score (home s) (away s + i)
+
+addEvent :: Score -> Event -> Score
+addEvent s e = case e of
+                Play _ h (Make sh _ _) _ ->
+                    let f = if h then addHome s else addAway s in
+                    case sh of
+                        FreeThrow _ -> f 1
+                        TwoPointer _ _ -> f 2
+                        ThreePointer _ _ -> f 3
+
+                othwerwise -> s

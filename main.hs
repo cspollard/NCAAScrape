@@ -12,6 +12,8 @@ import qualified Data.ByteString.Lazy as BSL (readFile)
 import Data.Aeson (eitherDecode)
 import Control.Applicative ((<$>))
 import Data.NCAA.Game
+import Data.NCAA.Score
+import Data.NCAA.Event
 
 testhtml :: String
 testhtml = "http://www.ncaa.com/game/basketball-men/d1/2014/01/29/arizona-stanford/play-by-play"
@@ -31,9 +33,12 @@ testplay = "play.json"
 main :: IO ()
 main = do
     -- s <- runMaybeT $ openUrl testjson
-    -- let w = liftM gameFromNCAAData $ (eitherDecode . pack . fromJust ) s
 
     g <- eitherDecode <$> BSL.readFile testjson :: IO (Either String Game)
     print g
+
+    let es = fmap gameEvents g
+    print $ fmap (foldr (flip addEvent) (Score 0 0)) es
+
     -- g <- eitherDecode <$> BSL.readFile testplay :: IO (Either String Event)
     -- print g

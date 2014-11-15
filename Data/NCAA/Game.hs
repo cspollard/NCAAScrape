@@ -7,12 +7,16 @@ import Data.Aeson
 
 import Data.NCAA.Meta
 import Data.NCAA.Period
+import Data.NCAA.Event
 
 
 data Game = Game {
     meta :: Meta,
     periods :: [Period]
     }
+
+gameEvents :: Game -> [Event]
+gameEvents g = concatMap id (map events $ periods g)
 
 instance Show Game where
     show g = show (meta g) ++ "\n" ++
