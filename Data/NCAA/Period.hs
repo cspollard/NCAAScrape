@@ -7,14 +7,14 @@ import Control.Applicative
 import Data.Attoparsec.Text (decimal)
 import Data.Text (Text)
 
-import Data.NCAA.Play
+import Data.NCAA.Event
 import Data.NCAA.Parse
 
 
 data Period = Period {
     number :: Int,
     display :: Text,
-    plays :: [Play]
+    events :: Events
 } deriving Show
 
 
