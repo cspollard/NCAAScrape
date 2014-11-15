@@ -54,12 +54,12 @@ data Shot = TwoPointer ShotType Distance
 
 threePointer :: Parser Shot
 threePointer = ThreePointer <$>
-                (string "3-point " *> shotType) <*>
+                (string "a 3-point " *> shotType) <*>
                 (string " from " *> decimal <* string " feet out")
 
 twoPointer :: Parser Shot
 twoPointer = TwoPointer <$>
-                shotType <*>
+                (string "a " *> shotType) <*>
                 (string " from " *> decimal <* string " feet out" <|> return 0)
 
 freeThrow :: Parser Shot
