@@ -24,11 +24,21 @@ reboundType = (return DefensiveRebound <* string "a defensive" <|>
                 return OffensiveRebound <* string "an offensive") <?> "reboundType"
 
 
-data TurnoverType = LostBall | Traveling deriving Show
+data TurnoverType = LostBall
+                  | Traveling
+                  | OutOfBounds
+                  | BackCourt
+                  -- sometimes the turnovers aren't reported
+                  -- correctly...
+                  | BlankTurnover
+                  deriving Show
 
 turnoverType :: Parser TurnoverType
-turnoverType = (return LostBall <* string "a lost ball turnover: Lost Ball" <|>
-                return Traveling <* string "a traveling turnover: Traveling") <?> "turnoverType"
+turnoverType = (return LostBall <* string "lost ball" <|>
+                 return Traveling <* string "traveling" <|>
+                 return OutOfBounds <* string "out of bounds" <|>
+                 return BackCourt <* string "backcourt" <|>
+                 return BlankTurnover <* string "") <?> "turnoverType"
 
 
 data FoulType = OffensiveFoul
@@ -62,8 +72,8 @@ miss = flip Miss <$>
 
 turnover :: Parser PlayType
 turnover = flip Turnover <$>
-            fmap pack (manyTill anyChar (string " with ")) <*>
-            turnoverType
+            fmap pack (manyTill anyChar (string " with a ")) <*>
+            (turnoverType <* string " turnover")
 
 rebound :: Parser PlayType
 rebound = flip Rebound <$>
@@ -80,4 +90,4 @@ foul = Foul <$>
 -- this will be very slow since all these parsers begin with manyTill.
 -- is there a way to make them fail faster?
 playType :: Parser PlayType
-playType = choice [make, miss, turnover, rebound, foul] <?> "playType"
+playType = (choice [make, miss, turnover, rebound, foul] <* takeLazyText) <?> "playType"

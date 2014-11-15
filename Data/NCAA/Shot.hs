@@ -8,7 +8,8 @@ import Control.Applicative
 type Distance = Int
 
 distance :: Parser Distance
-distance = string "from " *> decimal <* " feet out"
+distance = (string "from " *> decimal <* " feet out") <|>
+            return 0
 
 type Points = Int
 
@@ -31,19 +32,28 @@ freeThrowType = (oneAndOne <|> multiFT) <?> "freeThrowType"
 data ShotType = JumpShot
               | Layup
               | HookShot
+              | Dunk
+              | TipShot
               deriving Show
 
 jumpShot :: Parser ShotType
-jumpShot = return JumpShot <* string "jump shot"
+jumpShot = return JumpShot <* string "jump"
 
 layup :: Parser ShotType
-layup = return Layup <* string "layup shot"
+layup = return Layup <* string "layup"
 
 hookShot :: Parser ShotType
-hookShot = return HookShot <* string "hook shot"
+hookShot = return HookShot <* string "hook"
+
+dunk :: Parser ShotType
+dunk = return Dunk <* string "dunk"
+
+tipShot :: Parser ShotType
+tipShot = return TipShot <* string "tip"
 
 shotType :: Parser ShotType
-shotType = choice [jumpShot, layup, hookShot] <?> "shotType"
+shotType = (choice [jumpShot, layup, hookShot, dunk, tipShot] <* string " shot") <?>
+            "shotType"
 
 
 data Shot = TwoPointer ShotType Distance
