@@ -59,7 +59,9 @@ timeoutType = choice [tvTimeout, shortTimeout, fullTimeout] <?> "timeoutType"
 data Event = PeriodStart PeriodType
            | PeriodEnd PeriodType
            | Timeout TimeoutType
-           | Play Time PlayType (Maybe Score)
+           -- no score reported if it doesn't change
+           -- Bool identifies the home team
+           | Play Time Bool PlayType (Maybe Score)
            deriving Show
 
 
@@ -77,9 +79,19 @@ timeout = Timeout <$> timeoutType
 -- this very badly needs to be cleaned up.
 toEvent :: A.Object -> A.Parser Event
 toEvent o = -- check plays first: they are most common
+            -- home team play?
             (Play <$>
                 o .: "time" <*> 
-                ((parseText playType =<< ht) <|> (parseText playType =<< vt)) <*>
+                return True <*>
+                (parseText playType =<< ht) <*>
+                (o .: "score" <|> return Nothing)
+            ) <|>
+
+            -- away team play?
+            (Play <$>
+                o .: "time" <*> 
+                return False <*>
+                (parseText playType =<< vt) <*>
                 (o .: "score" <|> return Nothing)
             ) <|>
 
