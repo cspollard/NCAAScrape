@@ -35,6 +35,6 @@ main = do
     -- s <- runMaybeT $ openUrl testjson
     -- let w = liftM gameFromNCAAData $ (eitherDecode . pack . fromJust ) s
 
-    -- g <- eitherDecode <$> BSL.readFile testjson :: IO (Either String Game)
-    g <- eitherDecode <$> BSL.readFile testplay :: IO (Either String Play)
+    g <- eitherDecode <$> BSL.readFile testjson :: IO (Either String Game)
+    -- g <- eitherDecode <$> BSL.readFile testplay :: IO (Either String Play)
     print g

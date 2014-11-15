@@ -12,4 +12,4 @@ parseText :: AT.Parser a -> Value -> Parser a
 parseText t = withText "Attoparsec" p
         where p text = case AT.parseOnly t text of
                         Right x -> return x
-                        Left err -> fail err
+                        Left err -> fail $ "Attoparsec error: " ++ err
