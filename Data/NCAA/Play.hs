@@ -1,13 +1,13 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Data.NCAA.Basketball.Play where
+module Data.NCAA.Play where
 
 import Data.Attoparsec.Text
 import Control.Applicative
 import Data.Text (Text, pack)
 
-import Data.NCAA.Basketball.Player
-import Data.NCAA.Basketball.Shot
+import Data.NCAA.Player
+import Data.NCAA.Shot
 
 
 data Assist = Assist Name deriving Show

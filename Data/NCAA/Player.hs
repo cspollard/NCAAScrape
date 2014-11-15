@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Data.NCAA.Basketball.Player where
+module Data.NCAA.Player where
 
 import Data.Text (Text)
 

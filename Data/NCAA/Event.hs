@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Data.NCAA.Basketball.Event where
+module Data.NCAA.Event where
 
 import Data.Attoparsec.Text
 import Data.Aeson ((.:), withObject, FromJSON(..))
@@ -13,7 +13,7 @@ import Data.NCAA.Score
 import Data.NCAA.Time
 import Data.NCAA.Parse
 
-import Data.NCAA.Basketball.Play
+import Data.NCAA.Play
 
 
 data PeriodType = FirstHalf

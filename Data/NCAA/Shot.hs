@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Data.NCAA.Basketball.Shot where
+module Data.NCAA.Shot where
 
 import Data.Attoparsec.Text
 import Control.Applicative
