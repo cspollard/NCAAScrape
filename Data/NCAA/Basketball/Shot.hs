@@ -25,6 +25,9 @@ oneAndOne = OneAndOne <$>
 multiFT :: Parser FreeThrowType
 multiFT = MultiFT <$> (decimal <* string " of ") <*> decimal
 
+freeThrowType :: Parser FreeThrowType
+freeThrowType = oneAndOne <|> multiFT
+
 
 data ShotType = JumpShot
               | Layup
@@ -49,7 +52,6 @@ data Shot = TwoPointer ShotType Distance
           | FreeThrow FreeThrowType
           deriving Show
 
-
 threePointer :: Parser Shot
 threePointer = ThreePointer <$>
                 (string "3-point " *> shotType) <*>
@@ -61,7 +63,7 @@ twoPointer = TwoPointer <$>
                 (string " from " *> decimal <* string " feet out" <|> return 0)
 
 freeThrow :: Parser Shot
-freeThrow = FreeThrow <$> string "free throw " *> (oneAndOne <|> multiFT)
+freeThrow = FreeThrow <$> (string "free throw " *> freeThrowType)
 
 shot :: Parser Shot
 shot = choice [threePointer, twoPointer, freeThrow]
