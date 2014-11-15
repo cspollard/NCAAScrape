@@ -13,7 +13,14 @@ data Meta = Meta {
     division :: Division,
     status :: Status,
     teams :: (Team, Team)
-    } deriving Show
+    }
+
+instance Show Meta where
+    show m = "Division: " ++ show (division m) ++ "\n" ++
+                "Status: " ++ show (status m) ++ "\n" ++
+                "Teams: " ++ show t1 ++ ", " ++ show t2
+                where
+                    (t1, t2) = teams m
 
 
 instance FromJSON Meta where

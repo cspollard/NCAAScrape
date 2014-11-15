@@ -12,7 +12,12 @@ import Data.NCAA.Period
 data Game = Game {
     meta :: Meta,
     periods :: [Period]
-    } deriving Show
+    }
+
+instance Show Game where
+    show g = show (meta g) ++ "\n" ++
+                foldr (\p ps -> show p ++ "\n" ++ ps) "" (periods g) ++ "\n"
+
 
 instance FromJSON Game where
     parseJSON = withObject "failed to parse game."

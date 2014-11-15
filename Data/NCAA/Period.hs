@@ -15,7 +15,11 @@ data Period = Period {
     number :: Int,
     display :: Text,
     events :: [Event]
-} deriving Show
+    }
+
+instance Show Period where
+    show p = show (display p) ++ ":\n" ++
+                foldr (\e es -> show e ++ "\n" ++ es) "" (events p) ++ "\n"
 
 
 instance FromJSON Period where

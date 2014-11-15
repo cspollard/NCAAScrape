@@ -17,13 +17,17 @@ data Team = Team {
     shortName :: String,
     nickName :: String,
     color :: Int
-    } deriving Show
+    }
 
 
 parserHome :: AT.Parser Bool
 parserHome = (string "true" *> return True) <|>
                 (string "false" *> return False)
     
+
+instance Show Team where
+    show = abbr
+
 
 instance FromJSON Team where
     parseJSON = withObject "failed to parse team."
