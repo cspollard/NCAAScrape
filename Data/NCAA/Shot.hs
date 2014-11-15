@@ -4,7 +4,6 @@ module Data.NCAA.Shot where
 
 import Data.Attoparsec.Text
 import Control.Applicative
-import Data.Text (Text)
 
 type Distance = Int
 
@@ -26,7 +25,7 @@ multiFT :: Parser FreeThrowType
 multiFT = MultiFT <$> (decimal <* string " of ") <*> decimal
 
 freeThrowType :: Parser FreeThrowType
-freeThrowType = oneAndOne <|> multiFT
+freeThrowType = (oneAndOne <|> multiFT) <?> "freeThrowType"
 
 
 data ShotType = JumpShot
@@ -44,7 +43,7 @@ hookShot :: Parser ShotType
 hookShot = return HookShot <* string "hook shot"
 
 shotType :: Parser ShotType
-shotType = choice [jumpShot, layup, hookShot]
+shotType = choice [jumpShot, layup, hookShot] <?> "shotType"
 
 
 data Shot = TwoPointer ShotType Distance
@@ -55,15 +54,15 @@ data Shot = TwoPointer ShotType Distance
 threePointer :: Parser Shot
 threePointer = ThreePointer <$>
                 (string "a 3-point " *> shotType) <*>
-                (string " from " *> decimal <* string " feet out")
+                (skipSpace *> distance)
 
 twoPointer :: Parser Shot
 twoPointer = TwoPointer <$>
                 (string "a " *> shotType) <*>
-                (string " from " *> decimal <* string " feet out" <|> return 0)
+                (skipSpace *> distance)
 
 freeThrow :: Parser Shot
 freeThrow = FreeThrow <$> (string "free throw " *> freeThrowType)
 
 shot :: Parser Shot
-shot = choice [threePointer, twoPointer, freeThrow]
+shot = choice [threePointer, twoPointer, freeThrow] <?> "shot"

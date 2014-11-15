@@ -30,10 +30,10 @@ overtime :: Parser PeriodType
 overtime = Overtime <$> decimal <* takeTill (== '.')
 
 game :: Parser PeriodType
-game = return Game <* string "End of the Game"
+game = return Game <* string "Game"
 
 periodType :: Parser PeriodType
-periodType = choice [half, overtime, game]
+periodType = choice [half, overtime, game] <?> "periodType"
 
 
 data TimeoutType = TVTimeout
@@ -53,18 +53,21 @@ fullTimeout :: Parser TimeoutType
 fullTimeout = return ShortTimeout <* manyTill anyChar (string "full timeout")
 
 timeoutType :: Parser TimeoutType
-timeoutType = choice [tvTimeout, shortTimeout, fullTimeout]
+timeoutType = choice [tvTimeout, shortTimeout, fullTimeout] <?> "timeoutType"
 
 
-data Event = PeriodEnd PeriodType
+data Event = PeriodStart PeriodType
+           | PeriodEnd PeriodType
            | Timeout TimeoutType
-           -- put score second so we can parse event JSON objects quickly
-           | Play Time Score PlayType
+           | Play Time PlayType (Maybe Score)
            deriving Show
 
 
+periodStart :: Parser Event
+periodStart = PeriodStart <$> (string "Start of the " *> periodType)
+
 periodEnd :: Parser Event
-periodEnd = PeriodEnd <$> periodType
+periodEnd = PeriodEnd <$> (string "End of the " *> periodType)
 
 timeout :: Parser Event
 timeout = Timeout <$> timeoutType
@@ -74,13 +77,14 @@ timeout = Timeout <$> timeoutType
 -- this very badly needs to be cleaned up.
 toEvent :: A.Object -> A.Parser Event
 toEvent o = -- check plays first: they are most common
-            (flip Play <$>
-                o .: "score" <*>
+            (Play <$>
                 o .: "time" <*> 
-                ((parseText playType =<< ht) <|> (parseText playType =<< vt))
+                ((parseText playType =<< ht) <|> (parseText playType =<< vt)) <*>
+                (o .: "score" <|> return Nothing)
             ) <|>
 
-            -- periods always end in homeText.
+            -- periods always start/end in homeText.
+            (parseText periodStart =<< ht) <|>
             (parseText periodEnd =<< ht) <|>
 
             -- timeouts show up in both homeText and
@@ -94,4 +98,4 @@ toEvent o = -- check plays first: they are most common
 
 
 instance FromJSON Event where
-    parseJSON = withObject "failed to parse event." toEvent
+    parseJSON v = withObject "failed to parse event." toEvent v <|> fail (show v)

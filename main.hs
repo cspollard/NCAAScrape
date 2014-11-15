@@ -9,11 +9,11 @@ module Main where
 -- import Data.ByteString.Lazy.Char8 (pack)
 
 import qualified Data.ByteString.Lazy as BSL (readFile)
-import Data.Aeson (decode)
+import Data.Aeson (eitherDecode, decode)
 import Control.Applicative ((<$>), (<*>))
 import Control.Monad (mapM_)
 import Data.NCAA.Game
-import Data.NCAA.Play
+import Data.NCAA.Event
 import Data.NCAA.Period
 
 testhtml :: String
@@ -23,7 +23,7 @@ testhtml = "http://www.ncaa.com/game/basketball-men/d1/2014/01/29/arizona-stanfo
 
 testjson :: String
 -- testjson = "http://data.ncaa.com/sites/default/files/data/game/basketball-men/d1/2014/01/29/arizona-stanford/pbp.json"
-testjson = "examplepbp.json"
+testjson = "game.json"
 
 testperiod = "period.json"
 testplay = "play.json"
@@ -36,6 +36,7 @@ main = do
     -- s <- runMaybeT $ openUrl testjson
     -- let w = liftM gameFromNCAAData $ (eitherDecode . pack . fromJust ) s
 
-    g <- decode <$> BSL.readFile testjson :: IO (Maybe Game)
-    -- g <- eitherDecode <$> BSL.readFile testplay :: IO (Either String Play)
-    print $ plays . head . periods <$> g
+    g <- eitherDecode <$> BSL.readFile testjson
+    print $ events . head . periods <$> g
+    -- g <- eitherDecode <$> BSL.readFile testplay :: IO (Either String Event)
+    -- print g

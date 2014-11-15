@@ -13,22 +13,22 @@ import Data.NCAA.Shot
 data Assist = Assist Name deriving Show
 
 assist :: Parser Assist
-assist = Assist <$>
-            fmap pack (manyTill anyChar (string " with ")) <* "the assist"
+assist = (Assist <$>
+            fmap pack (manyTill anyChar (string " with ")) <* "the assist") <?> "assist"
 
 
 data ReboundType = OffensiveRebound | DefensiveRebound deriving Show
 
 reboundType :: Parser ReboundType
-reboundType = return DefensiveRebound <* string "a defensive" <|>
-                return OffensiveRebound <* string "an offensive"
+reboundType = (return DefensiveRebound <* string "a defensive" <|>
+                return OffensiveRebound <* string "an offensive") <?> "reboundType"
 
 
 data TurnoverType = LostBall | Traveling deriving Show
 
 turnoverType :: Parser TurnoverType
-turnoverType = return LostBall <* string "a lost ball turnover: Lost Ball" <|>
-                return Traveling <* string "a traveling turnover: Traveling"
+turnoverType = (return LostBall <* string "a lost ball turnover: Lost Ball" <|>
+                return Traveling <* string "a traveling turnover: Traveling") <?> "turnoverType"
 
 
 data FoulType = OffensiveFoul
@@ -37,9 +37,9 @@ data FoulType = OffensiveFoul
               deriving Show
 
 foulType :: Parser FoulType
-foulType = return OffensiveFoul <* string "Offensive foul" <|>
+foulType = (return OffensiveFoul <* string "Offensive foul" <|>
             return PersonalFoul <* string "Personal foul" <|>
-            return ShootingFoul <* string "Shooting foul"
+            return ShootingFoul <* string "Shooting foul") <?> "foulType"
 
 
 data PlayType = Make Shot Name (Maybe Assist)
@@ -80,4 +80,4 @@ foul = Foul <$>
 -- this will be very slow since all these parsers begin with manyTill.
 -- is there a way to make them fail faster?
 playType :: Parser PlayType
-playType = choice [make, miss, turnover, rebound, foul]
+playType = choice [make, miss, turnover, rebound, foul] <?> "playType"

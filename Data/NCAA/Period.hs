@@ -14,7 +14,7 @@ import Data.NCAA.Parse
 data Period = Period {
     number :: Int,
     display :: Text,
-    events :: Events
+    events :: [Event]
 } deriving Show
 
 
