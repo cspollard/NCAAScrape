@@ -9,8 +9,9 @@ module Main where
 -- import Data.ByteString.Lazy.Char8 (pack)
 
 import qualified Data.ByteString.Lazy as BSL (readFile)
-import Data.Aeson (eitherDecode)
-import Control.Applicative ((<$>))
+import Data.Aeson (decode)
+import Control.Applicative ((<$>), (<*>))
+import Control.Monad (mapM_)
 import Data.NCAA.Game
 import Data.NCAA.Play
 import Data.NCAA.Period
@@ -35,6 +36,6 @@ main = do
     -- s <- runMaybeT $ openUrl testjson
     -- let w = liftM gameFromNCAAData $ (eitherDecode . pack . fromJust ) s
 
-    g <- eitherDecode <$> BSL.readFile testjson :: IO (Either String Game)
+    g <- decode <$> BSL.readFile testjson :: IO (Maybe Game)
     -- g <- eitherDecode <$> BSL.readFile testplay :: IO (Either String Play)
-    print g
+    print $ plays . head . periods <$> g
