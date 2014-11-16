@@ -12,14 +12,26 @@ import Network.HTTP (simpleHTTP, getRequest, getResponseBody)
 import Data.Time.Calendar
 
 
+
+-- retrieve the page at a given URL
+readURL :: String -> IO Text
+readURL u = pack <$>
+                join (getResponseBody <$> simpleHTTP (getRequest u))
+
+
 scoreboardBaseURL :: String
 scoreboardBaseURL = "http://www.ncaa.com/scoreboard/basketball-men/d1/"
 
+pbpBaseURL :: String
+pbpBaseURL = "http://data.ncaa.com/sites/default/files/data" 
+
 
 getPlayByPlay :: String -> IO Text
-getPlayByPlay s = readURL ("http://data.ncaa.com/sites/default/files/data" ++ s ++ "pbp.json")
+getPlayByPlay s = readURL $ pbpBaseURL ++ s ++ "/pbp.json"
 
 
+-- TODO
+-- rewrite?
 getPlayByPlays :: Day -> IO [Text]
 getPlayByPlays day = do
                     let (y, m, d) = toGregorian day
@@ -31,7 +43,7 @@ getPlayByPlays day = do
                     pbpurls <- parseOnly gameURLs <$> readURL url
 
                     case pbpurls of
-                        Right urls -> return urls
+                        Right urls -> sequence $ fmap (getPlayByPlay . unpack) urls
                         Left _ -> return []
 
 
@@ -45,12 +57,3 @@ nextURL = takeTill (== '<') *> (gameURL <|> char '<' *> nextURL)
 
 gameURLs :: Parser [Text]
 gameURLs = many nextURL
-
-gameLinks :: Parser [Text]
-gameLinks = many (manyTill anyChar gameURL *> gameURL)
-
-
-
-readURL :: String -> IO Text
-readURL u = pack <$>
-                join (getResponseBody <$> simpleHTTP (getRequest u))
