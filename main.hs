@@ -2,12 +2,6 @@
 
 module Main where
 
--- import Text.HandsomeSoup (openUrl)
--- import Control.Monad.Maybe (runMaybeT)
--- import Control.Monad (liftM)
--- import Data.Maybe (fromJust)
--- import Data.ByteString.Lazy.Char8 (pack)
-
 import qualified Data.ByteString.Lazy as BSL (readFile)
 import Data.Aeson (eitherDecode)
 import Control.Applicative ((<$>))
