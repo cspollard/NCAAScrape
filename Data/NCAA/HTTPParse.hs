@@ -12,29 +12,45 @@ import Network.HTTP (simpleHTTP, getRequest, getResponseBody)
 import Data.Time.Calendar
 
 
+scoreboardBaseURL :: String
 scoreboardBaseURL = "http://www.ncaa.com/scoreboard/basketball-men/d1/"
 
 
 getPlayByPlay :: String -> IO Text
-getPlayByPlay s = pack <$>
-                    readURL ("http://data.ncaa.com/sites/default/files/data" ++ s ++ "pbp.json")
+getPlayByPlay s = readURL ("http://data.ncaa.com/sites/default/files/data" ++ s ++ "pbp.json")
 
-
--- HERE
 
 getPlayByPlays :: Day -> IO [Text]
-getPlayByPlays day =
-                    where
-                        (y, m, d) = toGregorian day
-                        url = scoreboardBaseURL ++
-                            show (y `mod` 100) ++ "/" ++ show m ++ "/" ++ show d
-                        pbps = 
+getPlayByPlays day = do
+                    let (y, m, d) = toGregorian day
+                    let ymstr = show y ++ "/" ++ show m ++ "/"
+                    -- day string needs to be zero padded.
+                    let datestr = ymstr ++ (if d > 9 then show d else "0" ++ show d)
+                    let url = scoreboardBaseURL ++ datestr
 
+                    pbpurls <- parseOnly gameURLs <$> readURL url
+
+                    case pbpurls of
+                        Right urls -> return urls
+                        Left _ -> return []
+
+
+gameURL :: Parser Text
+gameURL = string "<a href=\"" *> takeTill (== '"') <*
+                string "\" class=\"gamecenter\">"
+
+nextURL :: Parser Text
+-- make sure to eat up the '<' before continuing...
+nextURL = takeTill (== '<') *> (gameURL <|> char '<' *> nextURL)
 
 gameURLs :: Parser [Text]
-gameURLs = many (string "<a href=\"" *> takeTill (== '"') <*
-                string "\" class=\"gamecenter\">")
+gameURLs = many nextURL
+
+gameLinks :: Parser [Text]
+gameLinks = many (manyTill anyChar gameURL *> gameURL)
 
 
-readURL :: String -> IO String
-readURL u = join $ getResponseBody <$> simpleHTTP (getRequest u)
+
+readURL :: String -> IO Text
+readURL u = pack <$>
+                join (getResponseBody <$> simpleHTTP (getRequest u))
